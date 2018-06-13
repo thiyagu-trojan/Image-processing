@@ -37,3 +37,8 @@ void image_fileops::save_image(unsigned char *image, char link[], int height, in
     fwrite(image, sizeof(unsigned char), height*width*channels , file);
     fclose(file);
 }
+
+void image_fileops::free_memory(unsigned char *image)
+{
+    delete [] image;
+}

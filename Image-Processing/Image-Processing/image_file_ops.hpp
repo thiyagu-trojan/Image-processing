@@ -20,6 +20,7 @@ class image_fileops {
 public:
     unsigned char *read_image(char link[], int height, int width, int channels);
     void save_image(unsigned char *image, char link[], int height, int width, int channels);
+    void free_memory(unsigned char *image);
     
 };
 
