@@ -1,4 +1,4 @@
-The dimensions of each of the image is given here:
+The dimension of each of the image is given here:
 
 Tiffany.raw: 512x512 <br />
 Bear.raw: 854x480 <br />
