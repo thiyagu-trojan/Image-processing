@@ -6,7 +6,7 @@ Dance.raw: 854x480 <br />
 Airplane.raw: 512x512 <br />
 Desk.raw: 400x300 <br />
 Barn.raw: 380x275 <br />
-Star_wars: 600x338 <br />
+Star_wars.raw: 600x338 <br />
 
 
 These files can be veiwed with the ImageJ software. 
