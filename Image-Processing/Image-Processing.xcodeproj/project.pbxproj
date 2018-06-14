@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36C4628A20D124BB00F7A4A2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36C4628920D124BB00F7A4A2 /* main.cpp */; };
 		36C4629220D12A5700F7A4A2 /* image_file_ops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36C4629020D12A5700F7A4A2 /* image_file_ops.cpp */; };
 		36C4629B20D133F000F7A4A2 /* basic_image_ops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36C4629920D133F000F7A4A2 /* basic_image_ops.cpp */; };
+		36C8F81420D21B88000EB12F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36C8F81320D21B88000EB12F /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +26,11 @@
 
 /* Begin PBXFileReference section */
 		36C4628620D124BB00F7A4A2 /* Image-Processing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Image-Processing"; sourceTree = BUILT_PRODUCTS_DIR; };
-		36C4628920D124BB00F7A4A2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		36C4629020D12A5700F7A4A2 /* image_file_ops.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_file_ops.cpp; sourceTree = "<group>"; };
 		36C4629120D12A5700F7A4A2 /* image_file_ops.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_file_ops.hpp; sourceTree = "<group>"; };
 		36C4629920D133F000F7A4A2 /* basic_image_ops.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = basic_image_ops.cpp; sourceTree = "<group>"; };
 		36C4629A20D133F000F7A4A2 /* basic_image_ops.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = basic_image_ops.hpp; sourceTree = "<group>"; };
+		36C8F81320D21B88000EB12F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		36C4628820D124BB00F7A4A2 /* Image-Processing */ = {
 			isa = PBXGroup;
 			children = (
-				36C4628920D124BB00F7A4A2 /* main.cpp */,
+				36C8F81320D21B88000EB12F /* main.cpp */,
 				36C4629020D12A5700F7A4A2 /* image_file_ops.cpp */,
 				36C4629120D12A5700F7A4A2 /* image_file_ops.hpp */,
 				36C4629920D133F000F7A4A2 /* basic_image_ops.cpp */,
@@ -129,7 +129,7 @@
 			files = (
 				36C4629220D12A5700F7A4A2 /* image_file_ops.cpp in Sources */,
 				36C4629B20D133F000F7A4A2 /* basic_image_ops.cpp in Sources */,
-				36C4628A20D124BB00F7A4A2 /* main.cpp in Sources */,
+				36C8F81420D21B88000EB12F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

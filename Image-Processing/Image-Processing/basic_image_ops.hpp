@@ -19,6 +19,7 @@ class image_process: public image_fileops
 {
     public:
         void rgb2gray(unsigned char *image, char dest[], int height, int width, char method[]);
+        void rgb2cmyk(unsigned char *image, char dest[], int height, int width, char color[]);
 };
 
 
