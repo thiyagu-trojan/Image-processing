@@ -15,14 +15,17 @@
 #include <cstdlib>
 #include "image_file_ops.hpp"
 
-class image_process: public image_fileops
+class color_conversion: public image_fileops
 {
     public:
         void rgb2gray(unsigned char *image, char dest[], int height, int width, char method[]);
         void rgb2cmyk(unsigned char *image, char dest[], int height, int width, char color[]);
 };
 
-
-
+class interpolation: public image_fileops
+{
+    public:
+        void bilinear_interpolation(unsigned char *image, char dest[], int height, int width, int new_height, int new_width, int channels);
+};
 
 #endif /* basic_image_ops_hpp */

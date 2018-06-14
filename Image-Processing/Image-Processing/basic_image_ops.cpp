@@ -10,7 +10,8 @@
 
 
 //conversion from rgb to gray scale
-void image_process::rgb2gray(unsigned char *image, char dest[], int height, int width, char method[])
+
+void color_conversion::rgb2gray(unsigned char *image, char dest[], int height, int width, char method[])
 {
     image_fileops ops1;
     unsigned char *gray_image = new unsigned char [height*width];
@@ -46,7 +47,7 @@ void image_process::rgb2gray(unsigned char *image, char dest[], int height, int 
     }
     else
     {
-        printf("Enter the correct method\n");
+        printf("%s is not a valid method, enter the correct method\n",method);
         exit(EXIT_FAILURE);
     }
     ops1.save_image(gray_image,dest,height,width,1);
@@ -55,7 +56,7 @@ void image_process::rgb2gray(unsigned char *image, char dest[], int height, int 
 
 //Conversion from rgb to cmy
 
-void image_process::rgb2cmyk(unsigned char *image, char dest[], int height, int width, char color[])
+void color_conversion::rgb2cmyk(unsigned char *image, char dest[], int height, int width, char color[])
 {
     image_fileops ops1;
     if (strcmp("cyan",color)==0)
@@ -110,7 +111,38 @@ void image_process::rgb2cmyk(unsigned char *image, char dest[], int height, int 
     }
     else
     {
-        printf("Enter the correct method\n");
+        printf("%s is not a valid method, enter the correct method\n",color);
         exit(EXIT_FAILURE);
     }
 }
+
+//Bilinear Interpolation
+void interpolation::bilinear_interpolation(unsigned char *image, char dest[], int height, int width, int new_height, int new_width, int channels)
+{
+    image_fileops ops1;
+    float row_ratio, col_ratio, dx,dy;
+    row_ratio=(1.0*(height-1))/(new_height-1);
+    col_ratio=(1.0*(width-1))/(new_width-1);
+    float *temp_image = new float [new_height*new_width*channels];
+    unsigned char *resize_image = new unsigned char [new_height*new_width*channels];
+    int x,y;
+    for(int k=0;k<channels;k++)
+    {
+        for(int i=0;i<new_height;i++)
+        {
+            for(int j=0;j<new_width;j++)
+            {
+                y=(int)(row_ratio*i);
+                dy=((row_ratio*i)-y); //distance to the pixels above and below
+                x=(int)(col_ratio*j);
+                dx=((col_ratio*j)-x);// distance to the pixels to the left and right
+                temp_image[i*new_width*channels+j*channels+k]=((1-dy)*(1-dx)*(float)image[y*width*channels+x*channels+k])+(dx*(1-dy)*(float)image[y*width*channels+(x+1)*channels+k])+(dy*(1-dx)*(float)image[(y+1)*width*channels+x*channels+k])+(dx*dy*(float)image[(y+1)*width*channels+(x+1)*channels+k]);
+                resize_image[i*new_width*channels+j*channels+k]=(unsigned char)temp_image[i*new_width*channels+j*channels+k];
+            }
+        }
+    }
+    ops1.save_image(resize_image,dest,new_height,new_width,channels);
+}
+
+
+
